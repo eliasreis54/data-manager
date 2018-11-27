@@ -16,5 +16,6 @@ script:
   - bash start-test.sh
 
 after_success:
+  - chmod +x travis
   - docker build -t ${TRAVIS_REPO_SLUG} -f DockerFile .
   - travis/publish.sh
