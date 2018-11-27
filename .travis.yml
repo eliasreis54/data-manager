@@ -14,3 +14,7 @@ script:
   - export FLOW_BROKER_URL=http://127.0.0.1:3030
   - export DEVICE_MANAGER_URL=http://127.0.0.1:3030
   - bash start-test.sh
+
+after_success:
+  - travis/publish.sh
+  - travis/deploy-gh-pages.sh
