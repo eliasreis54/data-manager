@@ -83,17 +83,20 @@ const post = data => new Promise(async (resolve, reject) => {
   const body = data;
   requestsTemplate.post(body.templates)
     .then((templates) => {
+      console.log(templates[0].newObject);
       logger.debug('Templates imported.');
       body.templates = templates;
       body.devices = changeIdTemplateDevice(templates, body.devices);
       requestsDevice.post(body.devices)
         .then((devices) => {
+          console.log(devices[0].newObject);
           logger.debug('Devices imported.');
           body.devices = devices;
           body.flows = changeIdDeviceFlow(devices, body.flows);
           body.flows = changeIdTemplateFlow(templates, body.flows);
           requestFlow.post(body.flows)
             .then((newflows) => {
+              console.log(newflows[0].newObject);
               logger.debug('Flows imported.');
               const bodyTemplates = body.templates;
               body.templates = [];
