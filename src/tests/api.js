@@ -2,6 +2,7 @@ const express = require('express');
 const device = require('./device');
 const template = require('./template');
 const postTemplate = require('./postTemplate');
+const postDevice = require('./postDevice');
 const flow = require('./flow');
 
 const app = express();
@@ -11,7 +12,7 @@ app.get('/device', (req, res) => {
 });
 
 app.post('/device', (req, res) => {
-  res.sendStatus(200);
+  res.json({ devices: postDevice });
 });
 
 app.delete('/device', (req, res) => {
@@ -23,7 +24,7 @@ app.get('/template', (req, res) => {
 });
 
 app.post('/template', (req, res) => {
-  res.json(postTemplate);
+  res.json({ template: postTemplate });
 });
 
 app.delete('/template', (req, res) => {

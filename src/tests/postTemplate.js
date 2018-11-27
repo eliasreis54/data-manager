@@ -1,4 +1,4 @@
-const template = {
+const template = [{
   attrs:
     [{
       created: '2018-11-27T11:40:50.755884+00:00',
@@ -39,6 +39,6 @@ const template = {
     }],
   id: 24,
   label: 'Template',
-};
+}];
 
 module.exports = template;

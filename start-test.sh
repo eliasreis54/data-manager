@@ -1,7 +1,6 @@
 #!/bin/bash -ex
-
 node src/tests/api &
 
-dredd
+dredd --server-wait 10
 
 exit
