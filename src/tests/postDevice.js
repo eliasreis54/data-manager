@@ -1,3 +1,3 @@
-const device = [{ id: 'b26184', label: 'device' }];
+const device = [{ id: 'b59044', label: 'device' }];
 
 module.exports = device;

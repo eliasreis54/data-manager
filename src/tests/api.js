@@ -3,6 +3,7 @@ const device = require('./device');
 const template = require('./template');
 const postTemplate = require('./postTemplate');
 const postDevice = require('./postDevice');
+const postFlow = require('./postFlow');
 const flow = require('./flow');
 
 const app = express();
@@ -36,7 +37,7 @@ app.get('/v1/flow', (req, res) => {
 });
 
 app.post('/v1/flow', (req, res) => {
-  res.sendStatus(200);
+  res.json(postFlow);
 });
 
 app.delete('/v1/flow', (req, res) => {
