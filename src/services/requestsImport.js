@@ -32,7 +32,7 @@ function changeIdDeviceFlow(newDevices, flows) {
   const flowsList = flows;
   flowsList.forEach((flow, indexDevice) => {
     flow.flow.forEach((obj, index) => {
-      if ((obj.type === 'device in') || (obj.type === 'device out')) {
+      if ((obj.type === 'device in') || (obj.type === 'device out') || (obj.type === 'actuate')) {
         newDevices.forEach((item) => {
           if (item.oldId === obj._device_id) {
             flowsList[indexDevice].flow[index]._device_id = item.newId;
