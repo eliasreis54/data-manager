@@ -6,6 +6,7 @@ const router = Router();
 router.get('/export', (req, res) => {
   requestExport()
     .then((exportData) => {
+      console.log(exportData);
       res.json(exportData);
     })
     .catch((err) => {
